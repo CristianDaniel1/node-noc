@@ -1,8 +1,17 @@
 # Projeto NOC
 
-## Instruções de Config
+Este é um repositório de estudos de back-end com NodeJS. O objetivo do projeto NOC é monitorar as tarefas realizadas no app e aplicar uma Arquitetura Limpa com TypeScript.
 
-1. Criar um arquivo .env
+## Tecnologias
+
+- Node.js
+- TypeScript
+- MongoDB
+- PostgreSQL
+
+## Instruções
+
+1. Clonar o arquivo .env.template para .env
 2. Configurar as variáveis de ambiente (.env)
 
 ```
@@ -14,14 +23,9 @@ MAILER_SECRET_KEY=
 PROD=false
 ```
 
-3. Executar o comando para instalar dependências
+3. Executar o comando `npm install` para instalar dependências
+4. Executar o comando `npm run dev` para rodar o projeto
 
-```
-npm install
-```
+## Para obter a Gmail Key
 
-4. Executar o comando para rodar o projeto
-
-```
-npm run dev
-```
+[Google AppPasswords](https://myaccount.google.com/u/0/apppasswords)

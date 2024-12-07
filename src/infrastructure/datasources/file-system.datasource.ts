@@ -4,7 +4,7 @@ import { LogModel, LogSeverityLevel } from '../../domain/models/log.model';
 
 export class FileSystemDatasource implements LogDatasource {
   private readonly logPath = 'logs/';
-  private readonly allLogsPath = 'logs/logs-low.log';
+  private readonly allLogsPath = 'logs/logs-all.log';
   private readonly mediumLogsPath = 'logs/logs-medium.log';
   private readonly highLogsPath = 'logs/logs-high.log';
 
@@ -24,8 +24,19 @@ export class FileSystemDatasource implements LogDatasource {
     });
   };
 
-  saveLog(log: LogModel): Promise<void> {
-    throw new Error('Method not implemented.');
+  async saveLog(newLog: LogModel): Promise<void> {
+    const logAsJson = `${JSON.stringify(newLog)}\n`;
+
+    fs.appendFileSync(this.allLogsPath, logAsJson);
+
+    if (newLog.level === 'low') return;
+
+    if (newLog.level === 'medium') {
+      fs.appendFileSync(this.mediumLogsPath, logAsJson);
+      return;
+    }
+
+    fs.appendFileSync(this.highLogsPath, logAsJson);
   }
 
   getLogs(severityLevel: LogSeverityLevel): Promise<LogModel> {

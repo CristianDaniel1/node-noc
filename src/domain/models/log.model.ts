@@ -10,4 +10,13 @@ export class LogModel {
     this.level = level;
     this.createdAt = new Date();
   }
+
+  static fromJson = (json: string): LogModel => {
+    const { message, level, createdAt } = JSON.parse(json);
+
+    const log = new LogModel(message, level);
+    log.createdAt = new Date(createdAt);
+
+    return log;
+  };
 }

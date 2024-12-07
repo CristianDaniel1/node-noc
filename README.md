@@ -13,3 +13,15 @@ MAILER_SECRET_KEY=
 
 PROD=false
 ```
+
+3. Executar o comando para instalar dependências
+
+```
+npm install
+```
+
+4. Executar o comando para rodar o projeto
+
+```
+npm run dev
+```

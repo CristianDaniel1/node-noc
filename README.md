@@ -26,10 +26,16 @@ A funcionalidade principal é registrar logs de ações diversas, seja bem ou ma
 3. Executar o comando `npm install` para instalar dependências
 4. Levantar as bases de dados com o comando
 
-```
-docker compose -d
-```
+   ```
+   docker compose -d
+   ```
 
-5. Executar o comando `npm run dev` para rodar o projeto
+5. Executar o comando
+
+   ```
+   npx prisma migrate dev
+   ```
+
+6. Executar o comando `npm run dev` para rodar o projeto
 
 **Obs**: Para obter uma Gmail Key, acesse [Google AppPasswords](https://myaccount.google.com/u/0/apppasswords)

@@ -1,5 +1,11 @@
 # Projeto NOC
 
+<img 
+  src="https://i.imgur.com/1xtXE2l.png" 
+  alt="Icone de Node.js" 
+  width="80" 
+/>
+
 Este é um repositório de estudos do curso de Back-End com NodeJS. O objetivo do Projeto NOC é monitorar as tarefas realizadas no app e aplicar uma Arquitetura Limpa, utilizando, por exemplo, o Repository Pattern.
 
 ## Funcionalidades

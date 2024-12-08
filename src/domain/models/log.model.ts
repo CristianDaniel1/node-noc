@@ -22,6 +22,8 @@ export class LogModel {
   }
 
   static fromJson = (json: string): LogModel => {
+    json = json === '' ? '{}' : json;
+
     const { message, level, createdAt, origin } = JSON.parse(json);
 
     const log = new LogModel({
@@ -30,6 +32,14 @@ export class LogModel {
       createdAt,
       origin,
     });
+
+    return log;
+  };
+
+  static fromObject = (object: { [key: string]: any }): LogModel => {
+    const { message, level, createdAt, origin } = object;
+
+    const log = new LogModel({ message, level, createdAt, origin });
 
     return log;
   };
